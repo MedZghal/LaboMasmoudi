@@ -1,0 +1,46 @@
+<form [formGroup]="PatientForm" (ngSubmit)="onSubmit()">
+
+  <mat-form-field appearance="outline" class="col-6">
+    <mat-label>Nom</mat-label>
+    <input formControlName="nom" matInput placeholder="Entrez le nom du patient">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="col-6">
+    <mat-label>Prénom</mat-label>
+    <input matInput formControlName="prenom" placeholder="Entrez le prénom du patient">
+  </mat-form-field>
+<BR>
+
+<p>
+  <mat-form-field appearance="outline" class="col-6">
+    <mat-label>Date de naissance</mat-label>
+    <input matInput formControlName="datenaiss" [matDatepicker]="picker" placeholder="Entrez la date de naissance du patient">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="col-6">
+    <mat-label>N° Tel</mat-label>
+    <input matInput formControlName="tel" placeholder="Entrez le numéro Tel du patient">
+  </mat-form-field>
+</p>
+
+  <p >
+    <mat-form-field appearance="outline" class="col-6">
+      <mat-label>E_mail</mat-label>
+      <input matInput  formControlName="mail" placeholder="Entrez l'email du patient">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-6">
+      <mat-label>Adresse</mat-label>
+      <input matInput formControlName="adresse" placeholder="Entrez l'adresse du patient">
+    </mat-form-field>
+  </p>
+
+  <div class="form-group">
+    <button [disabled]="loading" class="btn btn-primary">
+      <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+      Enregistrer
+    </button>
+
+  </div>
+</form>

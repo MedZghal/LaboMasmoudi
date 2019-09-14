@@ -1,0 +1,63 @@
+<nav class="navbar  navbar-expand-lg ftco_navbar navbar-light bg-light flex-row">
+  <div class="container">
+    <div class="row no-gutters d-flex align-items-start align-items-center px-3 px-md-0">
+      <!-- <div class="col-lg-2 pr-4 align-items-center"> -->
+      <div class="col-lg-2 align-items-center">
+        <a class="navbar-brand" href="index.html">
+          <!-- Dr.<span>care</span> -->
+          <img class="logo" src="../../assets/images/LOGOSENDA.png" alt="Logo" style="width: 165px;" />
+        </a>
+      </div>
+      <div class="col-lg-10 d-none d-md-block">
+        <div class="row d-flex">
+          <div class="col-md-4 pr-4 d-flex topper align-items-center">
+            <div class="icon bg-white mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
+            <span class="text" style=" text-align: -webkit-center; ">contact@labo-masmoudi.com</span>
+          </div>
+          <div class="col-md pr-4 d-flex topper align-items-center">
+            <div class="icon bg-white mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
+            <span class="text" style=" text-align: -webkit-center; ">contact@labo-masmoudi.com</span>
+          </div>
+          <div class="col-md pr-4 d-flex topper align-items-center">
+            <label>
+              <input *ngIf="config.filtering" placeholder="Filter all columns"
+                     [ngTableFiltering]="config.filtering"
+                     class="form-control"
+                     (tableChanged)="onChangeTable(config)"/>
+            </label>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+<section class="ftco-section bg-light" style="padding-top: 10px;">
+  <div class="container">
+
+    <div>
+      <span class="col-6"><h1> Liste des patients </h1></span>
+      <span class="col-6"> <input  style=" margin-top: -60px; " type="button" value="Nouveau dossier patient" class="btn btn-primary py-3 px-5 add_btn" (click)="openDialog(null,'AddDsPatientModalComponent')"></span>
+    </div>
+
+
+    <ng-table class="table table-hover"
+                [config]="config"
+                (tableChanged)="onChangeTable(config)"
+                (cellClicked)="onCellClick($event)"
+                (scrolledDown)="onScrollDown()"
+                (expanderClicked)="expanderClicked($event)"
+                (valueEdit)="editRow($event)"
+                [rows]="rows" [columns]="columns"
+                [expandable]="true"
+                [expandedComponent]="rowComponent"
+                [rowInputs]="rowInputs">
+      </ng-table>
+
+
+    </div>
+
+
+</section>
+

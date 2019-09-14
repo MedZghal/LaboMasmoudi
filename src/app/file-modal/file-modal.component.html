@@ -1,0 +1,9 @@
+<div style="min-height: 400px">
+  <div *ngIf="Exist;else otherExist" class="file-loading">
+    <input id="file" name="file" type="file" multiple>
+  </div>
+  <ng-template #otherExist>
+<!--    Aucune fichiers trouvés-->
+  </ng-template>
+</div>
+

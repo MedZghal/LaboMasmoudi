@@ -1,0 +1,266 @@
+<button type="button" id="ScrollTop" (click)="ScrollBackTop()"><span class="icon-arrow-up"></span></button>
+
+<nav *ngIf="authenticationService.isAuthenticated()" class="navbar  navbar-expand-lg ftco_navbar navbar-light bg-light flex-row">
+  <div class="container">
+    <div class="row no-gutters d-flex align-items-start align-items-center px-3 px-md-0">
+      <!-- <div class="col-lg-2 pr-4 align-items-center"> -->
+      <div class="col-lg-2 align-items-center">
+        <a class="navbar-brand" href="index.html">
+          <!-- Dr.<span>care</span> -->
+          <img class="logo" src="../../assets/images/LOGOSENDA.png" alt="Logo" style="width: 165px;" />
+        </a>
+      </div>
+      <div class="col-lg-10 d-none d-md-block">
+        <div class="row d-flex">
+          <div class="col-md-4 pr-4 d-flex topper align-items-center">
+            <div class="icon bg-white mr-2 d-flex justify-content-center align-items-center"><span class="icon-map"></span></div>
+            <span class="text" style=" text-align: -webkit-center; ">Adresse : Rte X 20 Centre Dorra App 2 - Bloc B - Manar III - TUNIS</span>
+          </div>
+          <div class="col-md pr-4 d-flex topper align-items-center">
+            <div class="icon bg-white mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
+            <span class="text" style=" text-align: -webkit-center; ">contact@labo-masmoudi.com</span>
+          </div>
+          <div class="col-md pr-4 d-flex topper align-items-center">
+            <div class="icon bg-white mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
+            <span class="text" style=" text-align: -webkit-center; "> Appelez-nous au : <br> 70 860 680 / 70 860 293</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar"> -->
+<nav *ngIf="authenticationService.isAuthenticated()" class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target" id="ftco-navbar">
+  <div class="container d-flex align-items-center" id="header">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="oi oi-menu"></span> Menu
+    </button>
+<!--    <span class="btnAccess">-->
+<!--			  <p class="button-custom order-lg-last mb-0" style="margin-left:16px;"><a style=" display: inline; color: white;" class="btn btn-secondary py-2 px-3"><span class="icon-sign-in"></span> Accès Patient </a></p>-->
+<!--			  <p class="button-custom order-lg-last mb-0" style="margin-left:20px;"><a style=" display: inline;color: white; " class="btn btn-secondary py-2 px-3"><span class="icon-sign-in"></span> Accès Biologiste </a></p>-->
+<!--		  </span>-->
+
+    <div class="collapse navbar-collapse" id="ftco-nav">
+      <ul class="navbar-nav mr-auto main-nav">
+        <li class="nav-item active"><a routerLink="/Accueil" class="nav-link">Accueil</a></li>
+        <li class="nav-item"><a routerLink="/Présentation" class="nav-link">Présentation</a></li>
+        <li class="nav-item top-level-link">
+          <a href="#" class="nav-link mega-menu"> Patients</a>
+          <div class="sub-menu-block">
+            <div class="row">
+
+                <ul class="submenu">
+                  <div class="col-4 submenu_description">
+                    <div class="menu-desc">
+                      <h2 style="width: max-content;">Vous êtes patient(e)</h2>
+
+                      <p>Notre objectif est de faciliter vos démarches auprès de votre laboratoire, vous guider et vous informer, de la prescription au rendu du résultat.</p>
+                      <a class="bouton" href="#" (click)="LogIn()" >Accéder à l’espace Patients</a>
+                    </div>
+                  </div>
+                  <div class="col-4 submenu_links">
+                    <li><a routerLink="/Contact">Trouver Notre laboratoire</a></li>
+                    <li><a routerLink="/Simulateur">Simulateur d'analyses médicales</a></li>
+                    <li><a href="#">Questionnaire de satisfaction</a></li>
+                    <li><a href="#">Vos résultats</a></li>
+                    <li><a routerLink="/Activites">Actualités Laboratoire</a></li>
+                  </div>
+                  <div class="col-4 conseils-pratiques">
+                    <h4><a href="#">Conseils pratiques</a></h4>
+                    <li><a routerLink="/Preparer-votre-visite">Préparer votre visite</a></li>
+                    <li><a routerLink="/Venir-jeun">Venir à jeun</a></li>
+                    <li><a routerLink="/Prelevement-domicile">Le prélèvement à domicile</a></li>
+                  </div>
+                </ul>
+
+
+            </div>
+
+          </div>
+        </li>
+        <li class="nav-item top-level-link">
+          <a href="#" class="nav-link mega-menu">Professionnel</a>
+          <div class="sub-menu-block">
+            <div class="row">
+
+                <ul class="submenu">
+                  <div class="col-4 submenu_description">
+                    <div class="menu-desc">
+                      <h2>Vous êtes professionnel(le)</h2>
+
+                      <p>Les rubriques dédiées aux professionnels de santé sont à votre disposition pour faciliter vos contacts.</p>
+                      <a class="bouton" href="#">Accéder à l'espace professionnel</a>
+                    </div>
+                  </div>
+                  <div class="col-4 submenu_links">
+                    <li><a href="#">Résultats de vos patients</a></li>
+                    <li><a routerLink="/Simulateur">Simulateur d'analyses médicales</a></li>
+                    <li><a routerLink="/Document">DOCUMENTS À TÉLÉCHARGER</a></li>
+                    <li><a routerLink="/Activites">Actualités Laboratoire</a></li>
+                  </div>
+                  <div class="col-4 menu-actualite">
+                    <h4><a routerLink="/Activites">Actualités</a></h4>
+                    <div class="col-md-12 actus__item actualites">
+                      <a routerLink="/Activites">
+                        <div class="actus_item-detail">
+                          <p class="actus_item-detail-categorie">Professionnel</p>
+                          <h3>Accréditation ISO 15189</h3>
+                          <div class="actus_item-detail-footer"><span>13/03/2018</span><span>Lire</span></div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </ul>
+
+
+            </div>
+
+          </div>
+        </li>
+
+        <li class="nav-item"><a routerLink="/Activites" class="nav-link">Activités</a></li>
+        <li class="nav-item"><a routerLink="/Document" class="nav-link">Documents</a></li>
+        <li class="nav-item"><a routerLink="/Simulateur" class="nav-link">Simulateur</a></li>
+        <li class="nav-item"><a routerLink="/Contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+</nav>
+<!-- END nav -->
+
+<router-outlet></router-outlet>
+
+
+<footer *ngIf="authenticationService.isAuthenticated()" class="ftco-footer ftco-bg-dark ftco-section">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md">
+        <div class="ftco-footer-widget mb-5">
+          <h2 class="ftco-heading-2 logo">
+            <img src="../../assets/images/LOGOSENDABlanc.png" alt="Logo" style="width: 165px;" />
+          </h2>
+          <!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p> -->
+        </div>
+        <div class="ftco-footer-widget mb-5">
+          <h2 class="ftco-heading-2">Contact </h2>
+          <div class="block-23 mb-3">
+            <ul>
+              <li><span class="icon icon-map-marker"></span><span class="text">Rte X 20 Centre Dorra Bloc B 2092 Manar III - TUNIS , TUNISIE</span></li>
+              <li><a href="#"><span class="icon icon-phone"></span><span class="text">70 860 680 / 70 860 293</span></a></li>
+              <li><a href="#"><span class="icon icon-envelope"></span><span class="text">contact@labo-masmoudi.com</span></a></li>
+            </ul>
+          </div>
+
+          <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
+            <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+            <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+            <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="ftco-footer-widget mb-5 ml-md-4">
+          <h2 class="ftco-heading-2">Liens</h2>
+          <ul class="list-unstyled">
+            <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Accueil</a></li>
+            <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Présentation</a></li>
+            <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Activités</a></li>
+            <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Documents</a></li>
+            <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Contact</a></li>
+          </ul>
+        </div>
+        <!-- <div class="ftco-footer-widget mb-5 ml-md-4"> -->
+        <!-- <h2 class="ftco-heading-2">Services</h2> -->
+        <!-- <ul class="list-unstyled"> -->
+        <!-- <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Neurolgy</a></li> -->
+        <!-- <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Dentist</a></li> -->
+        <!-- <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Ophthalmology</a></li> -->
+        <!-- <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Cardiology</a></li> -->
+        <!-- <li><a href="#"><span class="ion-ios-arrow-round-forward mr-2"></span>Surgery</a></li> -->
+        <!-- </ul> -->
+        <!-- </div> -->
+      </div>
+      <div class="col-md">
+        <div class="ftco-footer-widget mb-5">
+          <h2 class="ftco-heading-2">Nouveautés</h2>
+          <div class="block-21 mb-4 d-flex">
+            <a class="blog-img mr-4" style="background-image: url(./../assets/images/BIO-RAD.jpg);"></a>
+            <div class="text">
+              <h3 class="heading"><a href="#">Préparation à la certification iso 15189 </a></h3>
+              <div class="meta">
+                <div><a href="#"><span class="icon-calendar"></span> jun 25, 2019</a></div>
+                <div><a href="#"><span class="icon-person"></span> Masmoudi Senda</a></div>
+                <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="block-21 mb-5 d-flex">
+            <a class="blog-img mr-4" style="background-image: url(./../assets/images/btest.png);"></a>
+            <div class="text">
+              <h3 class="heading"><a href="#">Breath test</a></h3>
+              <div class="meta">
+                <div><a href="#"><span class="icon-calendar"></span> jun 02, 2018</a></div>
+                <div><a href="#"><span class="icon-person"></span> Masmoudi Senda</a></div>
+                <div><a href="#"><span class="icon-chat"></span> 36</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="ftco-footer-widget mb-5">
+          <h2 class="ftco-heading-2">Heures d'ouverture</h2>
+          <h3 class="open-hours pl-4"><span class="ion-ios-time mr-3"></span>
+            <table class="footer__table">
+              <tbody>
+              <tr>
+                <p style="font-size: 14px;">
+                  Notre laboratoire est toujours à votre service 7j/7 et 24h/24, même les dimanches et les jours fériés.
+                  <br>
+                  Numéro Services d'urgence : <span style="font-size: 20px;float:right"> 24 111 722</span>
+                </p>
+              </tr>
+
+              </tbody>
+            </table>
+          </h3>
+        </div>
+        <div class="ftco-footer-widget mb-5">
+          <h2 class="ftco-heading-2">Abonnez-vous !</h2>
+<!--          <form action="#" class="subscribe-form" [formGroup]="Abonnez">-->
+          <div class="subscribe-form">
+            <div class="form-group">
+              <input type="text" class="form-control mb-2 text-center" placeholder="Enter email address">
+              <input type="submit" value="Subscribe" class="form-control submit px-3">
+            </div>
+<!--          </form>-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+
+        <p style=" display: none; "><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+        <p>
+          Copyright &copy;<script>document.write(new Date().getFullYear());</script> Tous les droits sont réservés | <a href="https://www.linkedin.com/in/mohamed-zghal-inginf/" target="_blank">PROSYS</a> - LABORATOIRE MASMOUDI SENDA
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+<!-- loader -->
+<div id="ftco-loader" class="show fullscreen">
+  <img src="../../assets/images/LOGOSENDA.png" class="logoLoader" alt="Logo" />
+  <svg class="circular" width="48px" height="48px">
+    <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
+    <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/>
+  </svg>
+</div>

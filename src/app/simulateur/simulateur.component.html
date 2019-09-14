@@ -1,0 +1,118 @@
+
+<section class="hero-wrap hero-wrap-2" style="background-image:url(../../assets/images/008.jpg);" data-stellar-background-ratio="0.5" >
+  <div class="overlay"></div>
+  <div class="row">
+    <div class="container">
+      <div class="row no-gutters slider-text align-items-center justify-content-center">
+        <div class="col-md-9 ftco-animate text-center">
+          <h1 class="mb-2 bread">Simulateur d'analyses médicales</h1>
+          <p class="breadcrumbs"><span class="mr-2"><a routerLink="/Accueil">Accueil <i class="ion-ios-arrow-forward"></i></a></span> <span>Simulateur <i class="ion-ios-arrow-forward"></i></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--<section class="hero-wrap hero-wrap-2"  data-stellar-background-ratio="0.5" style="height: 380px;">-->
+<!--  <div class="overlay"></div>-->
+<!--    <div class="row">-->
+<!--      <div class="col-6">-->
+<!--        <mat-video style="position: absolute; width: auto;" [muted]="true" [autoplay]="true" [download]="false" [loop]="true" [fullscreen]="true" [overlay]="false">-->
+<!--          <source src="../../assets/videos/Final Comp_1.mp4" type="video/mp4">-->
+<!--        </mat-video>-->
+<!--      </div>-->
+<!--      <div class="col-6">-->
+<!--        <div class="container">-->
+<!--          <div class="row no-gutters slider-text align-items-center justify-content-center">-->
+<!--            <div class="col-md-9 ftco-animate text-center">-->
+<!--              <h1 class="mb-2 bread">Simulateur d'analyses médicales</h1>-->
+<!--              <p class="breadcrumbs"><span class="mr-2"><a routerLink="/Accueil">Accueil <i class="ion-ios-arrow-forward"></i></a></span> <span>Simulateur <i class="ion-ios-arrow-forward"></i></span></p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+
+
+<!--</section>-->
+
+<section class="ftco-section bg-light">
+  <div class="container">
+
+    <div class="row justify-content-center mb-5 pb-2">
+      <div class="col-md-8 text-center heading-section ftco-animate">
+        <span class="subheading">Simulateur d'analyses médicales</span>
+        <h2 class="mb-4">Laboratoire Masoudi Jeribi Senda</h2>
+        <p>On a le plaisir de mettre à disposition de nos chèrs patients un simulateur d'analyses médicales
+          Après avoir choisi les analyses dont vous avez besoin, vous verrez apparaitre les conseils utiles
+          On a inséré dans cette page que les analyses les plus demandées, si vous ne trouvez pas l'analyse dont vous avez besoin dans la liste si dessous, n'hésitez pas <a><b>à nous contacter</b></a>  </p>
+      </div>
+    </div>
+
+    <section class="wrapper-blocs aos-init aos-animate" style="background-color:transparent" data-aos="fade-up" data-aos-duration="600">
+      <div class="row">
+
+      <div class="col-9" cdkDropListGroup>
+        <div class="example-container">
+          <h2>Analyses disponibles</h2>
+          <cdk-virtual-scroll-viewport itemSize="60" class="example-viewport">
+             <div
+            cdkDropList
+            [cdkDropListData]="todo"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+
+              <div class="example-box" *ngFor="let item of todo" cdkDrag>
+              {{item.analyse}}
+              <div *cdkDragPreview >
+
+                  <div class="col-md-12" style="padding: 0;margin: 0;">
+                    <div class="blog-entry">
+                      <a class="block-20" style="background-image: url('../../assets/images/Analyse.jpg');">
+                        <div class="meta-date text-center p-2">
+                          <span class="day">Simulateur</span>
+                          <span class="mos">Version</span>
+                          <span class="yr">2.0</span>
+                        </div>
+                      </a>
+                      <div class="text bg-white p-12">
+                        <h3 class="heading"><a>{{item.analyse}}</a></h3>
+                        <p>{{item.description}}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+
+            </div>
+
+          </div>
+          </cdk-virtual-scroll-viewport>
+        </div>
+
+
+        <div class="example-container">
+          <h2>Vous avez sélectionné</h2>
+          <cdk-virtual-scroll-viewport itemSize="60" class="example-viewport">
+            <div
+            cdkDropList
+            [cdkDropListData]="done"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+            <div class="example-box" *ngFor="let item of done" cdkDrag>{{item.analyse}}</div>
+          </div>
+          </cdk-virtual-scroll-viewport>
+        </div>
+      </div>
+      <div class="col-2">
+        <button mat-flat-button color="primary" style="width: 300px;padding: 10px;" [disabled]="done.length === 0" (click)="openDialog()">Simuler Analyses</button>
+      </div>
+
+
+    </div>
+    </section>
+
+  </div>
+</section>

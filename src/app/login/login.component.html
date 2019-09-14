@@ -1,0 +1,39 @@
+<a (click)="gotoAccueil()" class="backAccuiel" > < Retour à la page d'accueil </a>
+
+<div class="limiter">
+  <div class="container-login100">
+    <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login100-form validate-form">
+          <span class="login100-form-title p-b-49">
+            <img src="../../assets/images/LOGOSENDA.png" style="width: 200px;" alt="Logo" />
+					</span>
+          <div class="form-group">
+            <label>Adresse email</label>
+            <input style=" border: 1px solid #949335; border-radius: 10px;" type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+              <div *ngIf="f.username.errors.required">Adresse email est obligatoire</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Mot de passe </label>
+            <input style=" border: 1px solid #949335; border-radius: 10px;" type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+              <div *ngIf="f.password.errors.required">Mot de passe est obligatoire</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <button [disabled]="loading" class="btn btn-primary" style=" margin-top: 20px; width: 100%; height: 40px; ">
+              <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+              Se connecter
+            </button>
+
+          </div>
+        </form>
+    </div>
+  </div>
+</div>
+<footer>
+  <p style=" text-align: center; padding-bottom: 30px; ">
+    Copyright &copy;<script>document.write(new Date().getFullYear());</script> Tous les droits sont réservés | <a href="https://www.linkedin.com/in/mohamed-zghal-inginf/" target="_blank">PROSYS</a> - LABORATOIRE MASMOUDI SENDA
+  </p>
+</footer>

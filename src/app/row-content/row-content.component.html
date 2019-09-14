@@ -1,0 +1,22 @@
+<div class="container">
+  <h2>Liste des Analyse médicales</h2>
+  <p>This component was built by the table component
+  <input type="button" value="Nouvelle analyse" class="btn btn-primary py-3 px-5  add_btn" (click)="openDialog(data.row.id,'ResultatModalComponent')">
+  </p>
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>N°</th>
+      <th>Description</th>
+      <th>Date création</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor=" let res of data.row[0].resultats" style="cursor: pointer" (click)="openDialog(res,'FileModalComponent')">
+      <td>{{res.id}}</td>
+      <td>{{res.descp}}</td>
+      <td>{{res.Date_Creation}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
